@@ -1,0 +1,18 @@
+# Heavy, machine-specific native install (models, venv, ROCm runtime) — not source
+comfyui-rocm/
+
+# Local assistant/editor config and notes
+.claude/
+CLAUDE.md
+
+# Python
+__pycache__/
+*.pyc
+
+# Node / Vite build
+node_modules/
+dist/
+
+# Local env + persistent data (lives in a Docker volume, not the repo)
+.env
+*.db

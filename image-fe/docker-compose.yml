@@ -1,0 +1,17 @@
+services:
+  image-fe:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - COMFYUI_URL=${COMFYUI_URL:-http://host.docker.internal:8188}
+      - LLM_URL=${LLM_URL:-http://host.docker.internal:11434}
+      - LLM_MODEL=${LLM_MODEL:-nemomix-unleashed-12b}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - fe-data:/data
+    restart: unless-stopped
+
+volumes:
+  fe-data:
